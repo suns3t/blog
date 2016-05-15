@@ -1,5 +1,21 @@
 source 'https://rubygems.org'
 
+# Use Redcarpet to format Markdown
+gem 'redcarpet'
+
+# Use Bootstrap ruby gem to pretty up the app
+# Use bootstram-rubygem to prettier GUI
+gem 'bootstrap'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
+
+# Use devise & omniauth to manage user
+gem 'devise'
+gem 'omniauth'
+# Login with Facebook also
+gem 'omniauth-facebook'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'

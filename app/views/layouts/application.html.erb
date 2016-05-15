@@ -7,8 +7,39 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+	<div class="jumbotron">
+	    <div class="container">
+	      <h1>Multiuser Blog</h1>
+	      <p>This is a blog for everyone to public just whatever they want. Following Markdown format</p>
+	    </div>
+	</div>
+	<div class="container">
+		<!-- Add a search form -->
+		<div class="row">
+		<%= form_tag articles_path, :method => 'get', class: "form-inline pull-xs-right" do %>
+	        <%= text_field_tag :search, params[:search], class: "form-control" %>
+	        <%= submit_tag "Search", :name => nil, class: "btn btn-success-outline" %>
+	    <% end %>
+	    </div>
+		<div class="row">
+	      	<% if user_signed_in? %>
+	        	<div class="col-md-6">
+	          		<%= link_to '+ New Article', new_article_path, class: "btn btn-primary" %>
+        		</div>
+	        	<div class="col-md-6" id="user_nav"style="text-align: right">
+	            	Signed in as <i><%= current_user.email %>.<br /></i>
+	            	Not you? <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+	        	</div>
+	      	<% else %>
+	      	<div class="col-md-12" id="user_nav"style="text-align: right">
+	         	<b>New User?</b> Sign up <%= link_to " here.", new_user_registration_path %><br>
+	         	<b>Current member?</b> Sign in with <%= link_to " your email ", new_user_session_path %>
+	         		or Sign in with <%= link_to "Facebook.", user_omniauth_authorize_path(:facebook) %>
+	      	</div>
+	      	<% end %>
+	    </div>
+		<%= yield %>
+	</div>
 
 </body>
 </html>

@@ -1,0 +1,15 @@
+<p class="alert alert-info">
+	<i><%= User.find(comment.user_id).email %></i>: <%= comment.text %>
+
+	<!-- check if user signed in -->
+	<% if user_signed_in? %>
+		<!-- only show delete button if the comment belongs to you -->
+		<% if current_user.id == comment.user_id %>
+			<button type="button" class="close" aria-label="Close">
+				<span aria-hidden="true">
+					<%= link_to "x", [comment.article, comment], method: :delete, data: {confirm: 'Are you sure to delete this comment?'} %>
+				</span>
+			</button>
+		<% end %>
+	<% end %>
+</p>

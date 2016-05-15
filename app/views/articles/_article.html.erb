@@ -1,0 +1,43 @@
+<div class="card">
+  <div class="card-block">
+    <div class="card-title" style="border-bottom: 0.5px solid gray">
+    	<h3><%= article.title %></h3>
+        <% unless article.user.nil? %>
+            <h6><i>Created by <b><%= article.user.email %></b></i></h6>
+        <% end %>
+    </div> 
+
+    <div class="card-text">
+    	<p class="card-text">
+	      	<%= @markdown.render(article.body).html_safe %>
+	    </p>
+	</div>
+    <h5>Comments</h5>
+    <%= render article.comments %>
+
+    <% if current_user %>
+    
+    
+    <%= form_for([article, article.comments.build], :html => {class: 'form-inline'})  do |f| %>
+    <div class="form-group">
+        <%= f.text_area :text, class: 'form-control', rows: 1, placeholder: 'Add a comment' %>
+        <%= f.submit "Save", class: "btn btn-default" %>
+    </div>
+    <% end %>
+    <br/>
+    
+	<div class="card-footer">
+        <% if current_user.id == article.user.id %>
+    		<%= link_to 'Show', article, class: 'btn btn-primary' %>
+            <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-warning' %>
+            <%= link_to 'Destroy', article, method: :delete, data: {confirm: "Are you sure to delete the article?"},
+                class: 'btn btn-danger' %>
+        <% else %>
+            <i>Cannot edit the article not belong to you.</i>
+        <% end %>
+    </div>
+    <% else %>
+        <i>Want to add comment? Please sign in</i>
+    <% end %>
+   </div>
+</div>
