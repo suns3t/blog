@@ -42,8 +42,8 @@ Here's a walkthrough of implemented user stories:
 > 
 
 1. Create Article Model
-- Rails Generate using Scaffold to create Article model with title and body as string
-- Change the root route to article#index
+Rails Generate using Scaffold to create Article model with title and body as string
+Change the root route to article#index
 
 ![CreatArticleModel](walkthrough/1_CreateArticleModel.gif)
 
