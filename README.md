@@ -41,11 +41,7 @@ Here's a walkthrough of implemented user stories:
 > `![Video Walkthrough](walkthrough.gif)` 
 > 
 
-- Create Article Model
-Rails Generate using Scaffold to create Article model with title and body as string
-Change the root route to article#index
-
-![CreatArticleModel](walkthrough/1_CreateArticleModel.gif)
+- Create Article Model: Rails Generate using Scaffold to create Article model with title and body as string. Change the root route to article#index![CreatArticleModel](walkthrough/1_CreateArticleModel.gif)
 
 - Enable Markdown
 ![AddMardownGem](walkthrough/3_EnableMarkdownUsingRedcarpet.gif)
