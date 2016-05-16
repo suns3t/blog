@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
   devise_for :users
+
+  # Nest comment route inside article
   resources :articles do
     resources :comments
   end

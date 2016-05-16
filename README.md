@@ -41,16 +41,39 @@ Here's a walkthrough of implemented user stories:
 > `![Video Walkthrough](walkthrough.gif)` 
 > 
 
-- Create Article Model: Rails Generate using Scaffold to create Article model with title and body as string. Change the root route to article#index![CreatArticleModel](walkthrough/1_CreateArticleModel.gif)
+- **Create Article Model**: Rails Generate using Scaffold to create Article model with title and body as string. Change the root route to article#index![CreatArticleModel](walkthrough/1_CreateArticleModel.gif)
 
-- Enable Markdown
+- **Enable Markdown**: Add in Gem named Redcarpet. Run Bundle Install. Create @markdown variable on Article Controller. Render Markdown on Article Body in the Article Template.
 ![AddMardownGem](walkthrough/3_EnableMarkdownUsingRedcarpet.gif)
+
+- **Pretty Up With Bootstrap**: Add in Gem named bootstrap, run Bundle Install. Import bootstrap on scss and js file. You are ready to use Bootstrap in the project.
+![PrettyUpWithBootstrap](walkthrough/4_PrettyUpWithBootstrap.gif)
+
+- **Enable User Management With Devise, login using Facebook**: Add in Devise Gem. Setup model User inherit from Devise model. Setup APP_ID and APP_SECRET in order to login with Facebook. Add login path to template. In Article controller, change to current_user to save the signed in user as owner of article. Add user_id into Article table.
+![EnableUserManagementWithDevise](walkthrough/5_EnableUserManagementWithDevise.gif)
+
+- **Pretty Up One More Time** Decorate notice with Alert Component, dismissable from Bootstrap. Use Card Component from Bootstrap to represent each Article.
+![PrettyUpOneMoreTime](walkthrough/6_PrettyUpMoreTime.gif)
+
+- **Add in Comment Model** Using Scaffold to generate Comment model with text as string. Add in user_id and article_id to the Comment table. Set up Association with User and Article model. Migrate database. Nest comment routes inside article routes. Change the Comment Controller to be able to save current article, current user. Restrict only comment owner to be able to delete their comment.
+![AddCommentModel](walkthrough/7_AddCommentModel.gif)
+
+- **Restrict Article Modification Only For Owner** Create Article Owner function to check if current signed in is the article owner. Require to run this function before doing modification fuctions. Only show modification buttons on template if the owner of that article is signed in.
+![RestrictArticleModificationOnlyForOwner](walkthrough/8_RestrictArticleModificationOnlyForOwner.gif)
+
+- **Add Simple Search Box** Using form_tag to create a simple Search box. Pretty it up with form-inline from Bootstrap. Creat a simple search function by title in Article Model. Use that search function inside index function on Article Controller.
+![AddSearchBox](walkthrough/9_AddSearchBox.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Describe any challenges encountered while building the app:
+
+- Install Rails on Mac OS X, need to use **rbenv** [Link Here](https://gorails.com/setup/osx/10.11-el-capitan)
+- Take time to figure out how to cope with model belongs to 2 other models
+- Read article about how to use Devise with Facebook login
+
 
 ## License
 
