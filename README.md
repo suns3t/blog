@@ -59,7 +59,7 @@ Here's a walkthrough of implemented user stories:
 ![AddCommentModel](walkthrough/7_AddCommentModel.gif)
 
 - **Restrict Article Modification Only For Owner** Create Article Owner function to check if current signed in is the article owner. Require to run this function before doing modification fuctions. Only show modification buttons on template if the owner of that article is signed in.
-![RestrictArticleModificationOnlyForOwner](walkthrough/8_RestrictArticleModificationOnlyForOwner.gif)
+![RestrictArticleModificationOnlyForOwner](walkthrough/8_RestrictArticleModifitionOnlyForOwner.gif)
 
 - **Add Simple Search Box** Using form_tag to create a simple Search box. Pretty it up with form-inline from Bootstrap. Creat a simple search function by title in Article Model. Use that search function inside index function on Article Controller.
 ![AddSearchBox](walkthrough/9_AddSearchBox.gif)
