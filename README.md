@@ -6,7 +6,7 @@ Submitted by: **Huy Ngoc Hoang**
 
 Time spent: **10** hours spent in total
 
-URL: **Insert your Heroku URL here**
+URL: **[http://multiuser-blog.herokuapp.com/](http://multiuser-blog.herokuapp.com/)**
 
 ## User Stories
 
@@ -23,7 +23,7 @@ The following **optional** features are implemented:
 
 * [ ] There is a "navbar" that is responsive to window size similar to http://v4-alpha.getbootstrap.com/examples/navbar/. 
 * [ ] User can see how many views a post has. 
-* [ ] User can leave a comment on a post.
+* [x] User can leave a comment on a post.
 * [ ] User can add "tags" to a post, and filter posts by tag. 
 
 The following **additional** features are implemented:
@@ -36,10 +36,6 @@ The following **additional** features are implemented:
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
-
-> HINT: You can put a `walkthrough.gif` file in your project folder, add to git, and use the following syntax to embed it:  
-> `![Video Walkthrough](walkthrough.gif)` 
-> 
 
 - **Create Article Model**: Rails Generate using Scaffold to create Article model with title and body as string. Change the root route to article#index![CreatArticleModel](walkthrough/1_CreateArticleModel.gif)
 
