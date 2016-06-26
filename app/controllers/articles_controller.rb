@@ -5,10 +5,12 @@ class ArticlesController < ApplicationController
 
   # GET /articles
   # GET /articles.json
+
+  # Change markdown as global var since many function use it.
+  $markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+  
   def index
     @articles = Article.search(params[:search])
-    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
-
     # Handle when no article is found
     if @articles.empty?
       flash[:notice] = "No article found. Sign in to add more articles."

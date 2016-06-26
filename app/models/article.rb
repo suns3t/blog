@@ -10,9 +10,13 @@ class Article < ActiveRecord::Base
 	# Simple search function
     def self.search(search)
         if search
-          where("title LIKE ?", "%#{search}%")
+            # Lowercase the search term first
+            search.downcase!
+            where("title LIKE ?", "%#{search}%").order(created_at: :desc)
         else
-          all()
+
+          # Order article in descending order
+          all().order(created_at: :desc)
         end
     end
 end

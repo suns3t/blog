@@ -9,7 +9,7 @@
 
     <div class="card-text">
     	<p class="card-text">
-	      	<%= @markdown.render(article.body).html_safe %>
+	      	<%= $markdown.render(article.body).html_safe %>
 	    </p>
 	</div>
     <h5>Comments</h5>
@@ -20,7 +20,7 @@
     
     <%= form_for([article, article.comments.build], :html => {class: 'form-inline'})  do |f| %>
     <div class="form-group">
-        <%= f.text_area :text, class: 'form-control', rows: 1, placeholder: 'Add a comment' %>
+        <%= f.text_area :text, class: 'form-control', rows: 1, placeholder: 'Add a comment', required: true %>
         <%= f.submit "Save", class: "btn btn-default" %>
     </div>
     <% end %>
